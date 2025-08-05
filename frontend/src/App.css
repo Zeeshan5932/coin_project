@@ -1,0 +1,632 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fa;
+  color: #2c2e2f;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* PayPal Header Styles */
+.paypal-header {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 32px;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: #2c2e2f;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #0070ba;
+}
+
+/* Container Styles */
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+/* Form Styles */
+.payment-form {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e8ed;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #2c2e2f;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2c2e2f;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fafbfc;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0070ba;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(0, 112, 186, 0.1);
+}
+
+/* Recipient Search Styles */
+.recipient-container {
+  position: relative;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f5f7fa;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.suggestion-item:hover {
+  background-color: #f5f7fa;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0070ba, #00457c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.suggestion-details {
+  flex: 1;
+}
+
+.suggestion-username {
+  font-weight: 500;
+  color: #2c2e2f;
+}
+
+.suggestion-email {
+  font-size: 0.85rem;
+  color: #6c7378;
+}
+
+/* Amount Input Styles */
+.amount-container {
+  position: relative;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  color: #6c7378;
+  pointer-events: none;
+}
+
+.amount-input {
+  padding-left: 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Button Styles */
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-width: 140px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #0070ba 0%, #00457c 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 112, 186, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #0070ba;
+  border: 2px solid #0070ba;
+}
+
+.btn-secondary:hover {
+  background: #0070ba;
+  color: white;
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Loading Spinner Styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #e1e8ed;
+  border-top: 4px solid #0070ba;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 1.1rem;
+  color: #6c7378;
+  font-weight: 500;
+}
+
+/* Success Screen Styles */
+.success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  border: 4px solid #28a745;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  animation: checkmark 0.6s ease-in-out;
+}
+
+.checkmark {
+  width: 32px;
+  height: 32px;
+  stroke: #28a745;
+  stroke-width: 3;
+  fill: none;
+  animation: checkmark-draw 0.6s ease-in-out 0.2s both;
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes checkmark-draw {
+  0% {
+    stroke-dasharray: 0, 100;
+  }
+  100% {
+    stroke-dasharray: 100, 0;
+  }
+}
+
+/* Additional checkmark styles */
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #28a745;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.success-message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c2e2f;
+  margin-bottom: 0.5rem;
+}
+
+.transaction-details {
+  font-size: 1.1rem;
+  color: #6c7378;
+  margin-bottom: 2rem;
+}
+
+.success-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* More Ways Section */
+.more-ways {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+
+.more-ways-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2c2e2f;
+}
+
+.more-ways-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.more-way-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e1e8ed;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.more-way-item:hover {
+  background: #fafbfc;
+  border-color: #0070ba;
+}
+
+.more-way-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.icon-send { background: #e3f2fd; color: #1976d2; }
+.icon-group { background: #f3e5f5; color: #7b1fa2; }
+.icon-gift { background: #fff3e0; color: #f57c00; }
+
+.more-way-content {
+  flex: 1;
+}
+
+.more-way-title {
+  font-weight: 600;
+  color: #2c2e2f;
+  margin-bottom: 0.25rem;
+}
+
+.more-way-desc {
+  font-size: 0.9rem;
+  color: #6c7378;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .paypal-header {
+    padding: 1rem;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .container {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .payment-form {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+  }
+  
+  .success-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  .more-ways-list {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-form {
+    border-radius: 8px;
+    margin: 0;
+  }
+  
+  .form-input {
+    padding: 0.875rem;
+  }
+  
+  .btn {
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+/* Back Button Styles */
+.back-button-container {
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #0070ba;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}
+
+/* Recipient Display Styles */
+.recipient-display {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f5f7fa;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #e1e8ed;
+}
+
+.recipient-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0070ba, #00457c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.recipient-info {
+  flex: 1;
+}
+
+.recipient-name {
+  font-weight: 600;
+  color: #2c2e2f;
+  margin-bottom: 0.25rem;
+}
+
+.recipient-status {
+  font-size: 0.9rem;
+  color: #28a745;
+  font-weight: 500;
+}
+
+/* Payment Options Styles */
+.payment-options {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e1e8ed;
+}
+
+.option-group {
+  margin-bottom: 1rem;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  color: #2c2e2f;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.option-label:hover {
+  color: #0070ba;
+}
+
+.option-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e1e8ed;
+  border-radius: 4px;
+  cursor: pointer;
+  accent-color: #0070ba;
+}
+
+/* Enhanced Amount Input Styles */
+.amount-input:focus {
+  font-size: 1.4rem;
+}
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.step {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e1e8ed;
+  transition: background-color 0.3s ease;
+}
+
+.step.active {
+  background: #0070ba;
+}
+
+.step.completed {
+  background: #28a745;
+}
