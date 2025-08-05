@@ -14,7 +14,7 @@ const SuccessScreen = ({ transactionData, onSendMore, onGoHome }) => {
         </svg>
         
         <p style={{fontSize: '1.1rem', color: '#666', marginBottom: '32px', textAlign: 'center'}}>
-          You have sent <strong>{transactionData?.amount || '0,00'} EUR</strong> to <strong>{transactionData?.recipient || '@user'}</strong>
+          You have sent <strong>{transactionData?.amount || '0,00'} € EUR</strong> to <strong>{transactionData?.recipient || '@user'}</strong>
         </p>
         
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', maxWidth: '300px'}}>

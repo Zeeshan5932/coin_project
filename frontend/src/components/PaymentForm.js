@@ -110,7 +110,7 @@ const PaymentForm = ({ onSendMoney }) => {
     onSendMoney({
       recipient: recipient,
       amount: formatAmount(amount),
-      currency: 'EUR'
+      currency: '€ EUR'
     });
   };
 

@@ -11,7 +11,7 @@ const Header = () => {
         alignItems: 'center'
       }}>
         <img 
-          src={require('../images/Adobe Express - file.png')}
+          src={require('../images/logo.png')}
           alt="PayPal Logo"
           style={{
             width: '150px',
