@@ -14,11 +14,11 @@ const Header = () => {
           src={require('../images/logo.png')}
           alt="PayPal Logo"
           style={{
-            width: '150px',
-            height: '42px',
-            paddingLeft:`35px`,
+            width: window.innerWidth <= 768 ? '120px' : '150px',
+            height: window.innerWidth <= 768 ? '34px' : '42px',
+            paddingLeft: '5px',
             borderRadius: '50%',
-           color: 'white',
+            color: 'white',
           }}
         />
       </div>
@@ -29,15 +29,21 @@ const Header = () => {
         padding: '6px 12px',
         display: 'flex',
         alignItems: 'center',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+        boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+        flexWrap: window.innerWidth <= 768 ? 'wrap' : 'nowrap'
       }}>
-      <div style={{display: 'flex', alignItems: 'center', marginRight: '15px'}}>
+      <div style={{
+        display: 'flex', 
+        alignItems: 'center', 
+        marginRight: window.innerWidth <= 768 ? '10px' : '15px',
+        marginBottom: window.innerWidth <= 768 ? '8px' : '0'
+      }}>
         <img 
           src={require('../images/images.png')}
           alt="PayPal Logo"
           style={{
-            width: '50px',
-            height: '50px',
+            width: window.innerWidth <= 768 ? '40px' : '50px',
+            height: window.innerWidth <= 768 ? '40px' : '50px',
             borderRadius: '50%',
             objectFit: 'cover'
           }}
@@ -46,14 +52,55 @@ const Header = () => {
       <div style={{
         display: 'flex',
         flex: 1,
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        flexWrap: window.innerWidth <= 768 ? 'wrap' : 'nowrap',
+        gap: window.innerWidth <= 768 ? '8px' : '0'
       }}>
-        <div style={{fontSize: '14px', padding: '3px 2px', color: '#666'}}>Home</div>
-        <div style={{fontSize: '14px', padding: '3px 2px', color: '#666'}}>Activity</div>
-        <div style={{fontSize: '14px', padding: '3px 2px', color: '#666', borderBottom: '3px solid #0070ba', fontWeight: 'bold'}}>Making and accepting payments</div>
-        <div style={{fontSize: '14px', padding: '3px 2px', color: '#666'}}>Promote your business</div>
-        <div style={{fontSize: '14px', padding: '3px 2px', color: '#666'}}>Funding</div>
-        <div style={{fontSize: '14px', padding: '3px 2px', color: '#666'}}>Professional tools</div>
+        <div style={{
+          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          padding: '3px 2px', 
+          color: '#666',
+          whiteSpace: 'nowrap'
+        }}>Home</div>
+        <div style={{
+          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          padding: '3px 2px', 
+          color: '#666',
+          whiteSpace: 'nowrap'
+        }}>Activity</div>
+        <div style={{
+          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          padding: '3px 2px', 
+          color: '#666', 
+          borderBottom: '3px solid #0070ba', 
+          fontWeight: 'bold',
+          whiteSpace: window.innerWidth <= 768 ? 'normal' : 'nowrap'
+        }}>
+          {window.innerWidth <= 480 ? 'Payments' : 'Making and accepting payments'}
+        </div>
+        <div style={{
+          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          padding: '3px 2px', 
+          color: '#666',
+          whiteSpace: 'nowrap'
+        }}>
+          {window.innerWidth <= 480 ? 'Business' : 'Promote your business'}
+        </div>
+        <div style={{
+          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          padding: '3px 2px', 
+          color: '#666',
+          whiteSpace: 'nowrap'
+        }}>Funding</div>
+        <div style={{
+          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          padding: '3px 2px', 
+          color: '#666',
+          whiteSpace: 'nowrap',
+          display: window.innerWidth <= 480 ? 'none' : 'block'
+        }}>
+          {window.innerWidth <= 768 ? 'Tools' : 'Professional tools'}
+        </div>
       </div>
     </header>
     </div>

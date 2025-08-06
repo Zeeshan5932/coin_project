@@ -345,13 +345,14 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
         margin: '20px auto', 
         backgroundColor: 'white', 
         borderRadius: '12px', 
-        padding: '24px',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+        padding: window.innerWidth <= 480 ? '16px' : '24px',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+        width: window.innerWidth <= 480 ? 'calc(100% - 40px)' : 'auto'
       }}>
         <form onSubmit={handleSubmit}>
           <h1 style={{
             textAlign: 'center',
-            fontSize: '1.8rem',
+            fontSize: window.innerWidth <= 480 ? '1.5rem' : '1.8rem',
             fontWeight: '600',
             color: '#333',
             marginBottom: '24px',
@@ -366,7 +367,7 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
               marginBottom: '24px',
               border: '1px solid #e5e7eb',
               borderRadius: '8px',
-              maxHeight: '200px',
+              maxHeight: window.innerWidth <= 480 ? '150px' : '200px',
               overflowY: 'auto'
             }}>
               {filteredUsers.map((user, index) => (
@@ -374,7 +375,7 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                   key={user.username}
                   onClick={() => handleSuggestionClick(user)}
                   style={{
-                    padding: '12px 16px',
+                    padding: window.innerWidth <= 480 ? '10px 12px' : '12px 16px',
                     cursor: 'pointer',
                     borderBottom: index < filteredUsers.length - 1 ? '1px solid #f3f4f6' : 'none',
                     backgroundColor: '#fff'
@@ -382,8 +383,15 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                   onMouseEnter={(e) => e.target.style.backgroundColor = '#f8fafc'}
                   onMouseLeave={(e) => e.target.style.backgroundColor = '#fff'}
                 >
-                  <div style={{fontWeight: 500, color: '#333'}}>{user.username}</div>
-                  <div style={{fontSize: '0.875rem', color: '#6b7280'}}>{user.email}</div>
+                  <div style={{
+                    fontWeight: 500, 
+                    color: '#333',
+                    fontSize: window.innerWidth <= 480 ? '14px' : '16px'
+                  }}>{user.username}</div>
+                  <div style={{
+                    fontSize: window.innerWidth <= 480 ? '12px' : '0.875rem', 
+                    color: '#6b7280'
+                  }}>{user.email}</div>
                 </div>
               ))}
             </div>
@@ -394,9 +402,9 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
             <div style={{
               textAlign: 'center',
               color: '#0070ba',
-              fontSize: '1.2rem',
+              fontSize: window.innerWidth <= 480 ? '1rem' : '1.2rem',
               fontWeight: '500',
-              marginBottom: '40px',
+              marginBottom: window.innerWidth <= 480 ? '30px' : '40px',
               cursor: 'pointer'
             }}
             onClick={() => {
@@ -411,14 +419,17 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
           {/* Amount Display - Only show when recipient is selected */}
           {recipient && (
             <>
-              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <div style={{ 
+                textAlign: 'center', 
+                marginBottom: window.innerWidth <= 480 ? '30px' : '40px' 
+              }}>
                 <input
                   type="text"
                   value={amount}
                   onChange={handleAmountChange}
                   placeholder="0"
                   style={{
-                    fontSize: '4rem',
+                    fontSize: window.innerWidth <= 480 ? '3rem' : '4rem',
                     fontWeight: '400',
                     color: '#333',
                     textAlign: 'center',
@@ -430,7 +441,7 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                   inputMode="numeric"
                 />
                 <div style={{
-                  fontSize: '1.4rem',
+                  fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.4rem',
                   color: '#888',
                   fontWeight: '400',
                   marginTop: '8px'
@@ -442,7 +453,7 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
               {/* Why this payment section */}
               <div style={{
                 color: '#888',
-                fontSize: '1rem',
+                fontSize: window.innerWidth <= 480 ? '0.9rem' : '1rem',
                 marginBottom: '16px',
                 textAlign: 'left'
               }}>
@@ -460,8 +471,8 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
               <div style={{
                 textAlign: 'center',
                 color: '#888',
-                fontSize: '0.9rem',
-                marginBottom: '32px'
+                fontSize: window.innerWidth <= 480 ? '0.8rem' : '0.9rem',
+                marginBottom: window.innerWidth <= 480 ? '24px' : '32px'
               }}>
                 To find out more, see our Terms of use.
               </div>
@@ -475,12 +486,12 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                     color: 'white',
                     border: 'none',
                     borderRadius: '24px',
-                    padding: '12px 40px',
-                    fontSize: '1.1rem',
+                    padding: window.innerWidth <= 480 ? '10px 30px' : '12px 40px',
+                    fontSize: window.innerWidth <= 480 ? '1rem' : '1.1rem',
                     fontWeight: '500',
                     cursor: 'pointer',
                     marginBottom: '16px',
-                    minWidth: '120px'
+                    minWidth: window.innerWidth <= 480 ? '100px' : '120px'
                   }}
                 >
                   Send
@@ -499,7 +510,7 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                       backgroundColor: 'transparent',
                       color: '#0070ba',
                       border: 'none',
-                      fontSize: '1rem',
+                      fontSize: window.innerWidth <= 480 ? '0.9rem' : '1rem',
                       cursor: 'pointer',
                       textDecoration: 'underline'
                     }}
