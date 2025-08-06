@@ -42,8 +42,8 @@ const UserSelectionScreen = ({ onUserSelect }) => {
   }, [allUsers]);
 
   useEffect(() => {
-    // Only show suggestions if search term starts with @
-    if (searchTerm.startsWith('@') && searchTerm.length > 1) {
+    // Show suggestions if search term starts with @
+    if (searchTerm.startsWith('@')) {
       const filtered = allUsers.filter(user =>
         user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
         (user.email && user.email.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -58,8 +58,8 @@ const UserSelectionScreen = ({ onUserSelect }) => {
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
-    // Show suggestions only when @ is typed
-    if (e.target.value.startsWith('@') && e.target.value.length > 1) {
+    // Show suggestions when @ is typed
+    if (e.target.value.startsWith('@')) {
       setShowSuggestions(true);
     } else {
       setShowSuggestions(false);
@@ -142,7 +142,7 @@ const UserSelectionScreen = ({ onUserSelect }) => {
       <Header />
       <div className="nav-tabs" style={{
         display: 'flex',
-        padding: '5px 0',
+        padding: '8px 0',
         backgroundColor: '#f5f5f5',
         borderBottom: '1px solid #e0e0e0',
         textAlign: 'center'
@@ -150,30 +150,30 @@ const UserSelectionScreen = ({ onUserSelect }) => {
         <div style={{ 
           color: '#666', 
           flex: 1, 
-          padding: '3px 0', 
-          fontWeight: '500',
-          fontSize: window.innerWidth <= 480 ? '12px' : '14px'
+          padding: '5px 0', 
+          fontWeight: '600',
+          fontSize: window.innerWidth <= 480 ? '15px' : '17px'
         }}>Send</div>
         <div style={{ 
           color: '#666', 
           flex: 1, 
-          padding: '3px 0', 
-          fontWeight: '500',
-          fontSize: window.innerWidth <= 480 ? '12px' : '14px'
+          padding: '5px 0', 
+          fontWeight: '600',
+          fontSize: window.innerWidth <= 480 ? '15px' : '17px'
         }}>Ask</div>
         <div style={{ 
           color: '#666', 
           flex: 1, 
-          padding: '3px 0', 
-          fontWeight: '500',
-          fontSize: window.innerWidth <= 480 ? '12px' : '14px'
+          padding: '5px 0', 
+          fontWeight: '600',
+          fontSize: window.innerWidth <= 480 ? '15px' : '17px'
         }}>Contact</div>
         <div style={{ 
           color: '#666', 
           flex: 1, 
-          padding: '3px 0', 
-          fontWeight: '500',
-          fontSize: window.innerWidth <= 480 ? '12px' : '14px'
+          padding: '5px 0', 
+          fontWeight: '600',
+          fontSize: window.innerWidth <= 480 ? '15px' : '17px'
         }}>Plus</div>
       </div>
 
@@ -186,9 +186,10 @@ const UserSelectionScreen = ({ onUserSelect }) => {
         }}>
           <h1 style={{
             textAlign: 'left', 
-            fontWeight: 600, 
-            fontSize: window.innerWidth <= 480 ? '1.5rem' : '2rem', 
-            marginBottom: '2rem'
+            fontWeight: 700, 
+            fontSize: window.innerWidth <= 480 ? '2rem' : '2.5rem', 
+            marginBottom: '2rem',
+            color: '#333'
           }}>Send money</h1>
           
           {/* Search Input */}
@@ -201,8 +202,8 @@ const UserSelectionScreen = ({ onUserSelect }) => {
               placeholder="Name, @username, email address or mobile number"
               style={{
                 width: '100%',
-                padding: window.innerWidth <= 480 ? '12px 20px' : '16px 24px',
-                fontSize: window.innerWidth <= 480 ? '14px' : '16px',
+                padding: window.innerWidth <= 480 ? '14px 22px' : '18px 26px',
+                fontSize: window.innerWidth <= 480 ? '16px' : '18px',
                 border: '1px solid #ddd',
                 borderRadius: '30px',
                 boxShadow: 'none',
@@ -210,7 +211,8 @@ const UserSelectionScreen = ({ onUserSelect }) => {
                 color: '#666',
                 backgroundColor: '#ffffff',
                 fontFamily: 'inherit',
-                height: window.innerWidth <= 480 ? '48px' : '56px',
+                fontWeight: '500',
+                height: window.innerWidth <= 480 ? '52px' : '60px',
                 boxSizing: 'border-box'
               }}
             />

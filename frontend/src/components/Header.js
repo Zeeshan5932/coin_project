@@ -57,19 +57,21 @@ const Header = () => {
         gap: window.innerWidth <= 768 ? '8px' : '0'
       }}>
         <div style={{
-          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          fontSize: window.innerWidth <= 480 ? '14px' : window.innerWidth <= 768 ? '15px' : '17px', 
           padding: '3px 2px', 
           color: '#666',
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
+          fontWeight: '600'
         }}>Home</div>
         <div style={{
-          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          fontSize: window.innerWidth <= 480 ? '14px' : window.innerWidth <= 768 ? '15px' : '17px', 
           padding: '3px 2px', 
           color: '#666',
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
+          fontWeight: '600'
         }}>Activity</div>
         <div style={{
-          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          fontSize: window.innerWidth <= 480 ? '14px' : window.innerWidth <= 768 ? '15px' : '17px', 
           padding: '3px 2px', 
           color: '#666', 
           borderBottom: '3px solid #0070ba', 
@@ -79,25 +81,28 @@ const Header = () => {
           {window.innerWidth <= 480 ? 'Payments' : 'Making and accepting payments'}
         </div>
         <div style={{
-          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          fontSize: window.innerWidth <= 480 ? '14px' : window.innerWidth <= 768 ? '15px' : '17px', 
           padding: '3px 2px', 
           color: '#666',
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
+          fontWeight: '600'
         }}>
           {window.innerWidth <= 480 ? 'Business' : 'Promote your business'}
         </div>
         <div style={{
-          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
-          padding: '3px 2px', 
-          color: '#666',
-          whiteSpace: 'nowrap'
-        }}>Funding</div>
-        <div style={{
-          fontSize: window.innerWidth <= 480 ? '11px' : window.innerWidth <= 768 ? '12px' : '14px', 
+          fontSize: window.innerWidth <= 480 ? '14px' : window.innerWidth <= 768 ? '15px' : '17px', 
           padding: '3px 2px', 
           color: '#666',
           whiteSpace: 'nowrap',
-          display: window.innerWidth <= 480 ? 'none' : 'block'
+          fontWeight: '600'
+        }}>Funding</div>
+        <div style={{
+          fontSize: window.innerWidth <= 480 ? '14px' : window.innerWidth <= 768 ? '15px' : '17px', 
+          padding: '3px 2px', 
+          color: '#666',
+          whiteSpace: 'nowrap',
+          display: window.innerWidth <= 480 ? 'none' : 'block',
+          fontWeight: '600'
         }}>
           {window.innerWidth <= 768 ? 'Tools' : 'Professional tools'}
         </div>

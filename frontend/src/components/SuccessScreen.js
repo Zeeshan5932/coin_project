@@ -28,11 +28,12 @@ const SuccessScreen = ({ transactionData, onSendMore, onGoHome }) => {
         </svg>
         
         <p style={{
-          fontSize: window.innerWidth <= 480 ? '1rem' : '1.1rem', 
+          fontSize: window.innerWidth <= 480 ? '1.3rem' : '1.5rem', 
           color: '#666', 
           marginBottom: window.innerWidth <= 480 ? '24px' : '32px', 
           textAlign: 'center',
-          padding: window.innerWidth <= 480 ? '0 16px' : '0'
+          padding: window.innerWidth <= 480 ? '0 16px' : '0',
+          fontWeight: '600'
         }}>
           You have sent <strong>{transactionData?.amount || '0,00'} € EUR</strong> to <strong>{transactionData?.recipient || '@user'}</strong>
         </p>
@@ -53,8 +54,8 @@ const SuccessScreen = ({ transactionData, onSendMore, onGoHome }) => {
               border: 'none',
               borderRadius: '24px',
               padding: window.innerWidth <= 480 ? '10px 16px' : '12px 20px',
-              fontSize: window.innerWidth <= 480 ? '0.9rem' : '1rem',
-              fontWeight: '500',
+              fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.3rem',
+              fontWeight: '600',
               cursor: 'pointer',
               marginBottom: '16px'
             }}
@@ -69,8 +70,9 @@ const SuccessScreen = ({ transactionData, onSendMore, onGoHome }) => {
               color: '#666',
               border: 'none',
               padding: '8px',
-              fontSize: window.innerWidth <= 480 ? '0.9rem' : '1rem',
-              cursor: 'pointer'
+              fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.3rem',
+              cursor: 'pointer',
+              fontWeight: '600'
             }}
           >
             Home

@@ -352,8 +352,8 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
         <form onSubmit={handleSubmit}>
           <h1 style={{
             textAlign: 'center',
-            fontSize: window.innerWidth <= 480 ? '1.5rem' : '1.8rem',
-            fontWeight: '600',
+            fontSize: window.innerWidth <= 480 ? '2rem' : '2.5rem',
+            fontWeight: '700',
             color: '#333',
             marginBottom: '24px',
             margin: '0 0 24px 0'
