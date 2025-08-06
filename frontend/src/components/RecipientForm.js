@@ -430,8 +430,8 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                   placeholder="0"
                   style={{
                     fontSize: window.innerWidth <= 480 ? '3.5rem' : '4.5rem',
-                    fontWeight: '600',
-                    color: '#333',
+                    fontWeight: '800',
+                    color: '#000',
                     textAlign: 'center',
                     border: 'none',
                     outline: 'none',

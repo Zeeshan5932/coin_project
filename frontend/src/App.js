@@ -57,7 +57,7 @@ function App() {
       
       setTransactionHistory(prev => [newTransaction, ...prev]);
       setCurrentStep('success');
-    }, 2000); // 2 seconds loading time
+    }, 4000); // 3 seconds loading time
   };
 
   const handleUserSelection = (user) => {

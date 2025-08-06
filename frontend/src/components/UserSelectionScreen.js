@@ -208,10 +208,10 @@ const UserSelectionScreen = ({ onUserSelect }) => {
                 borderRadius: '30px',
                 boxShadow: 'none',
                 outline: 'none',
-                color: '#666',
+                color: '#000',
                 backgroundColor: '#ffffff',
                 fontFamily: 'inherit',
-                fontWeight: '600',
+                fontWeight: '700',
                 height: window.innerWidth <= 480 ? '56px' : '64px',
                 boxSizing: 'border-box'
               }}

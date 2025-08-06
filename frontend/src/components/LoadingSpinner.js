@@ -38,7 +38,7 @@ const LoadingSpinner = () => {
               strokeDasharray="251"
               strokeDashoffset="62.8"
               style={{
-                animation: 'spin 1s linear infinite'
+                animation: 'spin 4s linear infinite'
               }}
             />
             <style>
