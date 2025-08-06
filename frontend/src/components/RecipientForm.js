@@ -384,12 +384,12 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                   onMouseLeave={(e) => e.target.style.backgroundColor = '#fff'}
                 >
                   <div style={{
-                    fontWeight: 500, 
+                    fontWeight: 600, 
                     color: '#333',
-                    fontSize: window.innerWidth <= 480 ? '14px' : '16px'
+                    fontSize: window.innerWidth <= 480 ? '16px' : '18px'
                   }}>{user.username}</div>
                   <div style={{
-                    fontSize: window.innerWidth <= 480 ? '12px' : '0.875rem', 
+                    fontSize: window.innerWidth <= 480 ? '14px' : '16px', 
                     color: '#6b7280'
                   }}>{user.email}</div>
                 </div>
@@ -429,8 +429,8 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                   onChange={handleAmountChange}
                   placeholder="0"
                   style={{
-                    fontSize: window.innerWidth <= 480 ? '3rem' : '4rem',
-                    fontWeight: '400',
+                    fontSize: window.innerWidth <= 480 ? '3.5rem' : '4.5rem',
+                    fontWeight: '600',
                     color: '#333',
                     textAlign: 'center',
                     border: 'none',
@@ -441,9 +441,9 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                   inputMode="numeric"
                 />
                 <div style={{
-                  fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.4rem',
+                  fontSize: window.innerWidth <= 480 ? '1.4rem' : '1.6rem',
                   color: '#888',
-                  fontWeight: '400',
+                  fontWeight: '600',
                   marginTop: '8px'
                 }}>
                   € EUR
@@ -453,9 +453,10 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
               {/* Why this payment section */}
               <div style={{
                 color: '#888',
-                fontSize: window.innerWidth <= 480 ? '0.9rem' : '1rem',
+                fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.3rem',
                 marginBottom: '16px',
-                textAlign: 'left'
+                textAlign: 'left',
+                fontWeight: '600'
               }}>
                 Why this payment?
               </div>
@@ -486,9 +487,9 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                     color: 'white',
                     border: 'none',
                     borderRadius: '24px',
-                    padding: window.innerWidth <= 480 ? '10px 30px' : '12px 40px',
-                    fontSize: window.innerWidth <= 480 ? '1rem' : '1.1rem',
-                    fontWeight: '500',
+                    padding: window.innerWidth <= 480 ? '12px 32px' : '14px 42px',
+                    fontSize: window.innerWidth <= 480 ? '1.2rem' : '1.3rem',
+                    fontWeight: '600',
                     cursor: 'pointer',
                     marginBottom: '16px',
                     minWidth: window.innerWidth <= 480 ? '100px' : '120px'
@@ -510,9 +511,10 @@ const RecipientForm = ({ onRecipientSubmit, initialRecipient = '' }) => {
                       backgroundColor: 'transparent',
                       color: '#0070ba',
                       border: 'none',
-                      fontSize: window.innerWidth <= 480 ? '0.9rem' : '1rem',
+                      fontSize: window.innerWidth <= 480 ? '1.1rem' : '1.2rem',
                       cursor: 'pointer',
-                      textDecoration: 'underline'
+                      textDecoration: 'underline',
+                      fontWeight: '600'
                     }}
                   >
                     Cancel

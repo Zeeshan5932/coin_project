@@ -202,8 +202,8 @@ const UserSelectionScreen = ({ onUserSelect }) => {
               placeholder="Name, @username, email address or mobile number"
               style={{
                 width: '100%',
-                padding: window.innerWidth <= 480 ? '14px 22px' : '18px 26px',
-                fontSize: window.innerWidth <= 480 ? '16px' : '18px',
+                padding: window.innerWidth <= 480 ? '16px 24px' : '20px 28px',
+                fontSize: window.innerWidth <= 480 ? '18px' : '20px',
                 border: '1px solid #ddd',
                 borderRadius: '30px',
                 boxShadow: 'none',
@@ -211,8 +211,8 @@ const UserSelectionScreen = ({ onUserSelect }) => {
                 color: '#666',
                 backgroundColor: '#ffffff',
                 fontFamily: 'inherit',
-                fontWeight: '500',
-                height: window.innerWidth <= 480 ? '52px' : '60px',
+                fontWeight: '600',
+                height: window.innerWidth <= 480 ? '56px' : '64px',
                 boxSizing: 'border-box'
               }}
             />
@@ -292,9 +292,9 @@ const UserSelectionScreen = ({ onUserSelect }) => {
               color: 'white',
               border: 'none',
               borderRadius: '24px',
-              padding: '12px 28px',
-              fontSize: '1rem',
-              fontWeight: '500',
+              padding: '14px 32px',
+              fontSize: '1.2rem',
+              fontWeight: '600',
               cursor: searchTerm.trim() ? 'pointer' : 'not-allowed',
               marginBottom: '32px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
