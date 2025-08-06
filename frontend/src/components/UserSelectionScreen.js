@@ -179,9 +179,10 @@ const UserSelectionScreen = ({ onUserSelect }) => {
 
       <div className="container">
         <div style={{
-          maxWidth: '800px', 
-          margin: '24px auto', 
-          padding: window.innerWidth <= 480 ? '16px' : '20px'
+          maxWidth: window.innerWidth <= 768 ? '100%' : '700px', 
+          margin: window.innerWidth <= 768 ? '24px auto' : '24px 0', 
+          padding: window.innerWidth <= 480 ? '16px' : '20px',
+          paddingleft: window.innerWidth <= 768 ? '-100px' : '-105px'
         }}>
           <h1 style={{
             textAlign: 'left', 
@@ -228,47 +229,51 @@ const UserSelectionScreen = ({ onUserSelect }) => {
               <div style={{
                 position: 'absolute',
                 top: '100%',
-                left: 0,
-                width: '100%',
-                backgroundColor: '#fff',
+                left: 100,
+                width: '50%',
+                height: 'auto',
+                backgroundColor: '#4a4a4a',
                 borderRadius: '8px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                marginTop: '8px',
-                zIndex: 10,
-                maxHeight: '300px',
-                overflowY: 'auto'
+                boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+                marginTop: '5px',
+                zIndex:9,
+                maxHeight: '150px',
+                overflowY: 'auto',
+                overflow: 'hidden'
               }}>
                 {filteredUsers.map((user, index) => (
                   <div 
                     key={user.username}
                     ref={el => suggestionRefs.current[index] = el}
                     style={{
-                      padding: '12px 16px',
+                      padding: '6px 0px',
                       display: 'flex',
-                      alignItems: 'center',
+                      alignItems: 'start',
                       cursor: 'pointer',
-                      backgroundColor: index === selectedSuggestion ? '#f5f7fa' : 'white'
+                      backgroundColor: index === selectedSuggestion ? '#5a5a5a' : '#4a4a4a',
+                      borderBottom: index < filteredUsers.length - 1 ? '1px solid #5a5a5a' : 'none'
                     }}
                     onClick={() => handleUserClick(user)}
-                    onMouseEnter={() => setSelectedSuggestion(index)}
+        
                   >
                     <div style={{
-                      width: '36px',
-                      height: '36px',
+                      width: '40px',
+                      height: '40px',
                       borderRadius: '50%',
-                      backgroundColor: '#0070ba',
                       color: 'white',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       fontWeight: 'bold',
-                      marginRight: '12px'
+                      marginRight: '0px',
+                      fontSize: '15px'
                     }}>
-                      {user.avatar}
+                      
+              
                     </div>
                     <div>
-                      <div style={{fontWeight: 500}}>{user.username}</div>
-                      <div style={{fontSize: '0.85rem', color: '#666'}}>{user.email || 'No email'}</div>
+                      <div style={{fontWeight: 400, color: 'white', fontSize: '16px', marginBottom: '2px'}}>{user.username}</div>
+                      <div style={{fontSize: '14px', color: '#cccccc'}}></div>
                     </div>
                   </div>
                 ))}
@@ -279,9 +284,9 @@ const UserSelectionScreen = ({ onUserSelect }) => {
           {/* Next Button */}
           <button 
             onClick={() => handleUserSelect(searchTerm)}
-            disabled={!searchTerm.trim()} // Disable if no text entered
+            
             style={{
-              background: searchTerm.trim() ? '#0070ba' : '#ccc',
+              background:  '#0070ba',
               color: 'white',
               border: 'none',
               borderRadius: '24px',

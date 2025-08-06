@@ -39,7 +39,7 @@ const Header = () => {
         marginBottom: window.innerWidth <= 768 ? '8px' : '0'
       }}>
         <img 
-          src={require('../images/images.png')}
+          src={require('../images/Adobe Express - file.png')}
           alt="PayPal Logo"
           style={{
             width: window.innerWidth <= 768 ? '40px' : '50px',
